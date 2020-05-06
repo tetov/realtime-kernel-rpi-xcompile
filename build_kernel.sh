@@ -1,8 +1,8 @@
-docker run --rm dockcross/linux-arm64 > ./dockcross
+#! /bin/env sh
+set -e
+
+docker run --rm tetov/arm64-kernel-xcompile:latest > ./dockcross
 chmod +x ./dockcross
 
-./dockross sh get-src.sh
-
-cd linux-*
-
-../dockcross sh compile.sh
+./dockcross bin/get-src.sh
+./dockcross bin/compile.sh

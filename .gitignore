@@ -1,6 +1,9 @@
-*
+*.xz
+*.patch
+*.tar
+*.tar.xz
+*.tar.gz
+*.sign
+linux-*/
+dockcross
 
-!.gitignore
-!*.sh
-!LICENSE
-!*.md

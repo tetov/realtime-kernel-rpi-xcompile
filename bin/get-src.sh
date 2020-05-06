@@ -28,17 +28,18 @@ wget -N "$KERNEL_SRC_SIGN_URL"
 
 wget -O .config "$CONF_URL"
 
-xz -dfv linux-${VERSION}.tar.xz
-xz -dfv patch-${VERSION}-${RT_PATCH_VER}.patch.xz
+xz -dkfv linux-${VERSION}.tar.xz
+xz -dkfv patch-${VERSION}-${RT_PATCH_VER}.patch.xz
 
 # kernel signatures
-gpg2 --locate-keys torvalds@kernel.org gregkh@kernel.org
+gpg --auto-key-locate wkd --locate-keys torvalds@kernel.org gregkh@kernel.org
+
 
 # OSADL signing key for patch
-gpg2  --recv-keys 514B0EDE3C387F944FB3799329E574109AEBFAAa
+gpg  --recv-keys 514B0EDE3C387F944FB3799329E574109AEBFAAa
 
-gpg2 --verify linux-${VERSION}.tar.sign
-gpg2 --verify patch-${VERSION}-${RT_PATCH_VER}.patch.sign
+gpg --verify linux-${VERSION}.tar.sign
+gpg --verify patch-${VERSION}-${RT_PATCH_VER}.patch.sign
 
 tar xvf linux-${VERSION}.tar
 
@@ -47,5 +48,3 @@ cd linux-${VERSION}
 cat ../patch-${VERSION}-${RT_PATCH_VER}.patch | patch -p1 --verbose
 
 mv ../.config ./
-
-exit "linux-${VERSION}"
