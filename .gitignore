@@ -6,4 +6,5 @@
 *.sign
 linux-*/
 dockcross
+!docker-images/*
 
