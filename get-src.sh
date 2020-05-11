@@ -36,7 +36,7 @@ gpg --auto-key-locate wkd --locate-keys torvalds@kernel.org gregkh@kernel.org
 
 
 # OSADL signing key for patch
-gpg  --recv-keys 514B0EDE3C387F944FB3799329E574109AEBFAAa
+gpg  --recv-keys 514B0EDE3C387F944FB3799329E574109AEBFAAA
 
 gpg --verify linux-${VERSION}.tar.sign
 gpg --verify patch-${VERSION}-${RT_PATCH_VER}.patch.sign

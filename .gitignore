@@ -2,8 +2,12 @@
 *.patch
 *.tar
 *.tar.xz
-*.tar.gz
+*.gz
 *.sign
+*.changes
+*.deb
+*.buildinfo
+*.dsc
 linux-*/
 dockcross
 !docker-images/*
