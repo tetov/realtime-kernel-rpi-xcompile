@@ -10,7 +10,7 @@
     * In _General options/Preemption Model_ choose _Fully Preemptible Kernel_. 
     * Under _Boot options_ make sure _Default kernel command string_ is
     completely empty.
-1. Wait. (This takes \~ 3h on a ThinkPad T25)
+1. Wait. (This takes \~ 1h on a ThinkPad T25)
 
 ### Set up RPi
 
